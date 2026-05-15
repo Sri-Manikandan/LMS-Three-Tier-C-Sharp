@@ -48,7 +48,7 @@ namespace LMSDALLibrary.Repositories
                 .Count(b => b.MemberId == memberId && b.BorrowingStatus == BorrowingStatusEnum.returned);
 
             var unpaidFine = context.Database
-                .SqlQuery<decimal>($"SELECT calculate_member_fine({memberId})")
+                .SqlQuery<decimal>($"SELECT calculate_member_fine({memberId}) AS \"Value\"")
                 .FirstOrDefault();
 
             return (active, returned, unpaidFine);

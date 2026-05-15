@@ -1,5 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
 using LMSModelLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,15 +31,10 @@ public partial class LibraryDbContext : DbContext
     public virtual DbSet<MembershipType> MembershipTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql(DBHelper.ConnectionString);
+        => optionsBuilder.UseNpgsql(DBHelper.DataSource);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresEnum<BorrowingStatusEnum>()
-                    .HasPostgresEnum<CopyStatusEnum>()
-                    .HasPostgresEnum<FineStatusEnum>()
-                    .HasPostgresEnum<MembershipTypeEnum>();
-
         modelBuilder.Entity<Book>(entity =>
         {
             entity.HasKey(e => e.BookId).HasName("book_pkey");
@@ -93,6 +86,9 @@ public partial class LibraryDbContext : DbContext
 
             entity.Property(e => e.BookCopyId).HasColumnName("book_copy_id");
             entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.CopyStatus)
+                .HasColumnName("copy_status")
+                .HasConversion<string>();
 
             entity.HasOne(d => d.Book).WithMany(p => p.BookCopies)
                 .HasForeignKey(d => d.BookId)
@@ -116,6 +112,9 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.DueDate).HasColumnName("due_date");
             entity.Property(e => e.MemberId).HasColumnName("member_id");
             entity.Property(e => e.ReturnDate).HasColumnName("return_date");
+            entity.Property(e => e.BorrowingStatus)
+                .HasColumnName("borrowing_status")
+                .HasConversion<string>();
 
             entity.HasOne(d => d.BookCopy).WithMany(p => p.Borrowings)
                 .HasForeignKey(d => d.BookCopyId)
@@ -141,6 +140,9 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.FineAmount)
                 .HasPrecision(10, 2)
                 .HasColumnName("fine_amount");
+            entity.Property(e => e.FinePaidStatus)
+                .HasColumnName("fine_paid_status")
+                .HasConversion<string>();
 
             entity.HasOne(d => d.Borrowing).WithOne(p => p.Fine)
                 .HasForeignKey<Fine>(d => d.BorrowingId)
@@ -226,9 +228,12 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.MembershipTypeId).HasColumnName("membership_type_id");
             entity.Property(e => e.MaxActiveBorrowings).HasColumnName("max_active_borrowings");
             entity.Property(e => e.MaxBorrowDays).HasColumnName("max_borrow_days");
+            entity.Property(e => e.MembershipTypeName)
+                .HasColumnName("membership_type_name")
+                .HasConversion<string>();
         });
 
-OnModelCreatingPartial(modelBuilder);
+        OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

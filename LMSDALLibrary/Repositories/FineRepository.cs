@@ -24,7 +24,7 @@ namespace LMSDALLibrary.Repositories
         public decimal GetTotalUnpaidFine(int memberId)
         {
             return context.Database
-                .SqlQuery<decimal>($"SELECT calculate_member_fine({memberId})")
+                .SqlQuery<decimal>($"SELECT calculate_member_fine({memberId}) AS \"Value\"")
                 .FirstOrDefault();
         }
 

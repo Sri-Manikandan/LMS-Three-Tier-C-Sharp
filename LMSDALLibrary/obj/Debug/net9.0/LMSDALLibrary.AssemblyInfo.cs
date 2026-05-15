@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LMSDALLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf793469913e050d3d04d7acb109825c326cbc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce6283f3f5d4b9fe0ed33eafd5308d86a9e4e2d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("LMSDALLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LMSDALLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

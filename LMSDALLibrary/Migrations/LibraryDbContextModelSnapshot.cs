@@ -20,10 +20,6 @@ namespace LMSDALLibrary.Migrations
                 .HasAnnotation("ProductVersion", "9.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "borrowing_status_enum", new[] { "active", "returned" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "copy_status_enum", new[] { "available", "borrowed", "unavailable", "damaged" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "fine_status_enum", new[] { "unpaid", "paid", "waived" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "membership_type_enum", new[] { "basic", "premium", "student" });
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("LMSModelLibrary.Models.Book", b =>
@@ -100,8 +96,10 @@ namespace LMSDALLibrary.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("book_id");
 
-                    b.Property<int>("CopyStatus")
-                        .HasColumnType("integer");
+                    b.Property<string>("CopyStatus")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("copy_status");
 
                     b.HasKey("BookCopyId")
                         .HasName("book_copy_pkey");
@@ -130,8 +128,10 @@ namespace LMSDALLibrary.Migrations
                         .HasColumnName("borrow_date")
                         .HasDefaultValueSql("CURRENT_DATE");
 
-                    b.Property<int>("BorrowingStatus")
-                        .HasColumnType("integer");
+                    b.Property<string>("BorrowingStatus")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("borrowing_status");
 
                     b.Property<DateOnly>("DueDate")
                         .HasColumnType("date")
@@ -173,8 +173,10 @@ namespace LMSDALLibrary.Migrations
                         .HasColumnType("numeric(10,2)")
                         .HasColumnName("fine_amount");
 
-                    b.Property<int>("FinePaidStatus")
-                        .HasColumnType("integer");
+                    b.Property<string>("FinePaidStatus")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("fine_paid_status");
 
                     b.HasKey("FineId")
                         .HasName("fine_pkey");
@@ -301,8 +303,10 @@ namespace LMSDALLibrary.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("max_borrow_days");
 
-                    b.Property<int>("MembershipTypeName")
-                        .HasColumnType("integer");
+                    b.Property<string>("MembershipTypeName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("membership_type_name");
 
                     b.HasKey("MembershipTypeId")
                         .HasName("membership_type_pkey");
