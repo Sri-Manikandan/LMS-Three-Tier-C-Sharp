@@ -1,0 +1,15 @@
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/bin/Debug/net9.0/LMSModelLibrary.deps.json
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/bin/Debug/net9.0/LMSModelLibrary.dll
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/bin/Debug/net9.0/LMSModelLibrary.pdb
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.AssemblyInfoInputs.cache
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.AssemblyInfo.cs
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.csproj.CoreCompileInputs.cache
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.sourcelink.json
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.dll
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/refint/LMSModelLibrary.dll
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.pdb
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/ref/LMSModelLibrary.dll
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/bin/Debug/net9.0/LMSModelLibrary.runtimeconfig.json
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.csproj.AssemblyReference.cache
+/Users/srimanikandanr/My Files/Presidio/Genspark-Training/Casestudy/Project/LMSModelLibrary/obj/Debug/net9.0/LMSModelLibrary.genruntimeconfig.cache
